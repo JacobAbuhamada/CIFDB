@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
+
 <body>
 
     <?php
@@ -37,7 +38,7 @@
             <a href='mailto:cif.database@gmail.com'>cif.database@gmail.com</a>.";
           }
         }
-        
+
       ?></strong></p>
       <div class="input-box">
         <label for="email">Email: </label>
