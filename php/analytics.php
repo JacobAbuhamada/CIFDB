@@ -38,9 +38,9 @@
             <li>
                 <a href="analytics.php?tab=summary">Summary Stats</a>
             </li><li>
-                <a href="analytics.php?tab=vectors">Vectors</a>
+                <a href="analytics.php?tab=vectors">Experiences</a>
             </li><li>
-                <a href="analytics.php?tab=words">Word/Freq List</a>
+                <a href="analytics.php?tab=words">Word Frequency List</a>
             </li>
         </ul>
 

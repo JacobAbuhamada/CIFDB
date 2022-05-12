@@ -5,7 +5,7 @@
     <!-- summary statistics -->
 
         <h2>Summary Statistics</h2>
-
+        
         <?php include("_totalStats.php") ?>
 
         <div class="table-wrap">
