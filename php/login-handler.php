@@ -19,11 +19,18 @@ if (isset($_POST['submit'])) {
     // exit();
 
     if ($response) {
-        $_SESSION['user'] = array("ID" => $response["ID"], "email" => $_POST['email'], "password" => $response["password"], "join_date" => $response["password"]);
-        header('Location: newvector.php');
+        if($response["status"] != "error"){
+            $_SESSION['user'] = array("ID" => $response["ID"], "email" => $_POST['email'], "password" => $response["password"], "join_date" => $response["password"]);
+            header('Location: newvector.php');
+        }
+        else{
+            $error_message = "Email or password is invalid.";
+            header('Location: login.php?error=invalid');
+        }
     }
     else{
         $error_message = "Email or password is invalid.";
+        header('Location: login.php?error=invalid');
     }
 }
 ?>

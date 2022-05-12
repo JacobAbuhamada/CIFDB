@@ -1,0 +1,52 @@
+.tabs{
+  padding: 0px;
+}
+.tabs li{
+  display: inline-block;
+}
+
+.tabs li a{
+  padding: 0.5rem 1rem;
+  border: 5px solid darkblue;
+  display: block;
+  text-decoration: none;
+  font-weight: 700;
+  color: black;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.tabs li a:hover{
+  text-decoration: underline;
+  background-color: #9a99ff;
+}
+
+.totalStats p{
+  display: inline-block;
+}
+
+.totalStats p:first-child{
+  padding: 0.5rem 1.5rem;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td, th{
+  border: 1px solid black;
+  padding: 0px;
+  margin: 0px;
+}
+
+.vectorsClass td, .vectorsClass th{
+  padding: 0.25rem;
+}
+
+.word_count_content th, .word_count_content td{
+  padding: 0.25rem 2.75rem;
+}
+.word_count_content{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}

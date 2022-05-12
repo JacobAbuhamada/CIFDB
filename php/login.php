@@ -28,6 +28,9 @@
         <form action="login-handler.php" method="POST">
             <!-- Username:  <input type="text" name="username"><br><br>
             Password:  <input type="text" name="password"><br> -->
+            <?php if(isset($_GET["error"]) && $_GET["error"] == "invalid") 
+               echo "<p><strong>Your Email or Password is incorrect.</strong></p>";
+            ?>
             <label for="email">Email:</label>
             <input type="email" class="field" name="email" id="email" required>
             <br><br>

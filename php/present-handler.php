@@ -31,6 +31,7 @@ if (isset($_POST['submit'])) {
         "INSERT INTO `vectors` (`ID`,`v_time`,`v_date`,`X`,`Y`,`Z`,`SoS`,`description`,`past_or_pres`) 
         VALUES (?,?,?,?,?,?,?,?,?)"
     );
+    echo print_r($_SESSION["user"])."ASdfasadsf";
     $stmt->bind_param('sssssssss',
         $_SESSION["user"]["ID"],$v_time, $v_date, $X, $Y, 
         $Z, $SoS, $description, $isPresentExperience

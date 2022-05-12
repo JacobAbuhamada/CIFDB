@@ -220,6 +220,16 @@ input[type="range"] {
   width: 100%;
 } 
 
+.table-wrap{
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+
+.table-wrap td, .table-wrap th{
+  padding: 0.25rem 1.25rem;
+}
+
 @media only screen and (max-width: 600px){
   .portfolio-items-wrapper {
     grid-template-columns: 1fr;
