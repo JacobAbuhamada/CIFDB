@@ -8,7 +8,7 @@
 </head>
 
 
-<body>
+<body style="height: auto;">
 
     <?php
         include_once 'header.php';
@@ -20,8 +20,9 @@
     ?>
 
   <div class="wrapper">
+    <br>
     <h2>Create Your Account</h2>
-    <form action="signup-handler.php" method="post">
+    <form action="scripts/signup-handler.php" method="post">
       <p><strong><?php 
         if(isset($_GET['error'])){
           if($_GET['error'] == "emailNotMatch"){
@@ -44,28 +45,32 @@
         <label for="email">Email: </label>
         <input type="email" name="email" id="email" placeholder="Enter your email" required>
       </div>
+      <br>
       <div class="input-box">
         <label for="confirmemail">Confirm Email: </label>
         <input type="email" name="confirmemail" id="confirmemail" placeholder="Please verify email address" required>
       </div>
+      <br>
       <div class="input-box">
         <label for="password">Create Password: </label>
         <input type="password" name="password" id="password" pattern=".{8,}" placeholder="Eight or more characters" title="Eight or more characters" required>
       </div>
+      <br>
       <div class="input-box">
         <label for="confirmpass">Confirm Password: </label>
         <input type="password" name="confirmpass" id="confirmpass" placeholder="Confirm password" required>
       </div>
+      <br>
       <div class="consent">
         <input type="checkbox" id="consent" value="consent" required>
-        <label for="consent">I accept all conditions of the <a href="../consent.html">consent form</a></label>
+        <label for="consent">I accept all conditions of the <a href="../consent.php">consent form</a></label>
       </div>
-      
+      <br>
       <div class="StroopApp">
         <input type="checkbox" id="stroop" value="stroop" required>
         <label for="stroop">I have downloaded/will download the EncephalApp Stroop Test: <a href="https://www.encephalapp.com/" target="_blank" rel="noopener noreferrer">Apple iOS</a> | <a  href="https://play.google.com/store/apps/details?id=com.mobelux.stroop_android&hl=en_US&gl=US&showAllReviews=true" target="_blank" rel="noopener noreferrer"> Android</a></label>
       </div>
-
+      <br>
       <div class="Samply">
         <input type="checkbox" id="samply" value="samply" required>
         <label for="samply"> 
@@ -89,5 +94,7 @@
       </div>
     </form>
   </div>
+      <br>
+    <?php include("components/_video_iframe.php") ?>
 </body>
 </html>

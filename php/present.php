@@ -36,7 +36,7 @@ if (!isset($_SESSION['user'])) {
   
   <h3>These questions will allow for the unique characterization of your current experience right now or very recently.</h3>
   <br><hr>
-  <form action="present-handler.php" method="POST">
+  <form action="scripts/present-handler.php" method="POST">
     <section class="description">
       <label for="description"><strong>Description/Keywords describing the experience: </strong><br>
       <br></label>  
@@ -144,7 +144,7 @@ if (!isset($_SESSION['user'])) {
     <hr>
     <!-- This section will include a button to the App and information about the Stroop test and its importance-->
     <section class="stroop">
-      <strong>Stroop</strong>
+      <strong>Stroop (Optional)</strong>
       <br><br>
       If you have the <em>EncephalApp Stroop Test</em> already installed on your device, please go to the app
       and select "New Test" (If not already installed, please download the App now: 

@@ -34,7 +34,7 @@ if (!isset($_SESSION['user'])) {
   <h1>Past or Hypothetical Experience</h1>
   <h3>These questions will characterize past or hypothetical (i.e. typical) experiences.</h3>
   <br><hr>
-  <form action="past-handler.php" method="POST">
+  <form action="scripts/past-handler.php" method="POST">
       <section class="description">
         <label for="description"><strong>Description/Keywords describing the experience: </strong><br>
           <br>
@@ -49,7 +49,7 @@ if (!isset($_SESSION['user'])) {
         Example 2: winning 8th grade science fair<br>
         Example 3: most intense psychedelic trip<br>
         <br><br>
-          Still having trouble thinking of a past experience to include? <a href="prompts.html" target="_blank">Click here for some prompts to open in a new tab/window.</a>
+          Still having trouble thinking of a past experience to include? <a href="../prompts.html" target="_blank">Click here for some prompts to open in a new tab/window.</a>
       </section>
       <hr>
 

@@ -23,9 +23,9 @@
 
  
     <section class="signup-form">
-        <h1>Log In</h1>
         <br>
-        <form action="login-handler.php" method="POST">
+        <h1>Log In</h1>
+        <form action="scripts/login-handler.php" method="POST">
             <!-- Username:  <input type="text" name="username"><br><br>
             Password:  <input type="text" name="password"><br> -->
             <?php if(isset($_GET["error"]) && $_GET["error"] == "invalid") 
@@ -33,19 +33,22 @@
             ?>
             <label for="email">Email:</label>
             <input type="email" class="field" name="email" id="email" required>
-            <br><br>
+            <br>
+            <br>
             <label for="password">Password:</label>
             <input type="password" class="field" id="password" name="password" required>
-            <br><br>
+            <br>
+            <br>
             <section class="submission">
                 <button type="submit" class="field" name="submit" value="Login">Login</button>
             </section>
-            <br><br>
             <section class="signup">
-                <h3>Don't have an account? <a href="../consent.html">Create Account</a></h3>
+                <h3>Don't have an account? <a href="../consent.php?redirect=signup">Create Account</a></h3>
             </section>
         </form>
     </section>
+    <br>
+    <?php include("components/_video_iframe.php") ?>
 </body>
 
 </html>

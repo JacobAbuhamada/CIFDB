@@ -55,7 +55,7 @@
         
         <h2>User Data</h2>
         <br>
-        <p>If you would like a copy of all your data, please <a href="contact-in.php">Contact</a> me with an emailed request.</p>
+        <p>If you would like a copy of all your data, please <a href="contact.php">Contact</a> me with an emailed request.</p>
     </div>
 </body>
 

@@ -32,7 +32,7 @@
 
         If you agree to be in this study, we will ask you to do the following: <br>
         <ul>
-            <li>First, you will create an account on the CIF DB site: cifdb.org (this will be the link sent in the two daily prompts).
+            <li>First, you will create an account on the CIF DB site: cifdb.org (this will be the link sent in the two daily prompts). 
                 Additionally, you will have to sign up for the study on the <a href="https://samply.uni-konstanz.de/studies/common-integrative-framework-study" target="_blank" rel="noopener noreferrer">Samply app</a> to receive the notifications.</li>
             <li>Next, you will be prompted to complete demographic and basic psychiatric questions.</li>
             <li>When prompted via reminder once or twice per day using the Samply Research mobile app or an email reminder, (circumstances permitting) you will click the link in the reminder to log in to the CIF DB site and record your current experience on the website, generally taking no more than 2 to 3 minutes.</li>  
@@ -68,11 +68,25 @@
         <br><br>
         The procedures of this study have been explained to me and my questions have been addressed.  The information that I provide is confidential and will be used for research purposes only.  I am at least eighteen years old.  I understand that my participation is voluntary and that I may withdraw or cease to participate at anytime without penalty.  If I have any concerns about my experience in this study (e.g., that I was treated unfairly or felt unnecessarily threatened), I may contact the Chair of the Institutional Review Board or the Chair of the sponsoring department of this research regarding my concerns.
     </div>
-
     <br><br>
-    <form action="php/about-in.php">
-        <input type="submit" value="Return to About Page" />
-    </form>
+    <?php if(isset($_SESSION["user"])){ ?>
+        <form action="php/about.php">
+            <input type="submit" value="Return to About Page" />
+        </form>
+    <?php } else { 
+         if(isset($_GET["redirect"]) && $_GET["redirect"] == "signup") { ?>
+            <form action="php/signup.php">
+                <input type="submit" value="Agree and Continue to Account Registration" />
+            </form>
+    <?php } else if(isset($_GET["redirect"]) && $_GET["redirect"] == "about") { ?>
+            <form action="php/about.php">
+                <input type="submit" value="Return to About Page" />
+            </form>
+    <?php } else { ?>
+        <form action="php/login.php">
+                <input type="submit" value="Agree and Continue to Account Registration" />
+            </form>
+        <?php } } ?>
 
 </body>
 </html>

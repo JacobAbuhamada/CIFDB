@@ -4,7 +4,7 @@
 session_start();
  
 if (isset($_SESSION['user'])) {
-    header('Location: newvector.php');
+    header('Location: ../newvector.php');
 }
  
 require_once 'class-db.php';
@@ -21,16 +21,16 @@ if (isset($_POST['submit'])) {
     if ($response) {
         if($response["status"] != "error"){
             $_SESSION['user'] = array("ID" => $response["ID"], "email" => $_POST['email'], "password" => $response["password"], "join_date" => $response["password"]);
-            header('Location: newvector.php');
+            header('Location: ../newvector.php');
         }
         else{
             $error_message = "Email or password is invalid.";
-            header('Location: login.php?error=invalid');
+            header('Location: ../login.php?error=invalid');
         }
     }
     else{
         $error_message = "Email or password is invalid.";
-        header('Location: login.php?error=invalid');
+        header('Location: ../login.php?error=invalid');
     }
 }
 ?>

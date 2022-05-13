@@ -5,7 +5,7 @@ require_once 'conn.php';
 session_start();
  
 if (!isset($_SESSION['user'])) {
-    header('Location: login.php');
+    header('Location: ../login.php');
 }
 
 $arr_message = array();
@@ -223,7 +223,7 @@ if (isset($_POST['submit'])) {
     // $result = $conn->store_profile_results($sql);
     echo $conn->error;
     if ($result){
-        header('Location: profile.php?profile=success');
+        header('Location: ../profile.php?profile=success');
     }
 
 }

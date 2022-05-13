@@ -88,7 +88,7 @@ button{
 
 h1 {
     text-align:center;
-    margin: 2.5rem 0rem;
+    /* margin: 2.5rem 0rem; */
 }
 
 .content-wrapper {
@@ -209,7 +209,7 @@ input[type="range"] {
   color:rgb(129, 160, 218)
 }
 
-/* about-in.php */
+/* about.php */
 
 .about img{
   width: 100%;

@@ -13,10 +13,10 @@ if (!isset($_SESSION['user'])) {
                 <div class="left-side">
                     
                     <div class="nav-link-wrapper item-to-hide">
-                        <a href="about-out.php">About</a>
+                        <a href="about.php">About</a>
                     </div>
                     <div class="nav-link-wrapper item-to-hide">
-                        <a href="contact-out.php">Contact</a>
+                        <a href="contact.php">Contact</a>
                     </div>
 
                     <div class="nav-link-wrapper">
@@ -29,8 +29,8 @@ if (!isset($_SESSION['user'])) {
                         <i class="fa fa-bars"></i>
                     </button>
                     <div class="dropdown">
-                        <a href="about-out.php">About</a>
-                        <a href="contact-out.php">Contact</a>
+                        <a href="about.php">About</a>
+                        <a href="contact.php">Contact</a>
                     </div>
                 </div>
                 
@@ -42,23 +42,23 @@ if (!isset($_SESSION['user'])) {
         
                 <div class="nav-wrapper">
                     <div class="left-side">
-                    <div class="nav-link-wrapper item-to-hide">
-                    <a href="analytics.php">Analytics</a>
-                </div>
+                        <div class="nav-link-wrapper item-to-hide">
+                            <a href="analytics.php">Analytics</a>
+                        </div>
                         <div class="nav-link-wrapper">
                             <a href="newvector.php">Add New Experience</a>
                         </div>
                         <div class="nav-link-wrapper item-to-hide">
-                            <a href="about-in.php">About</a>
+                            <a href="about.php">About</a>
                         </div>
                         <div class="nav-link-wrapper item-to-hide">
-                            <a href="contact-in.php">Contact</a>
+                            <a href="contact.php">Contact</a>
                         </div>
                         <div class="nav-link-wrapper item-to-hide">
                             <a href="profile.php">Profile</a>
                         </div>
                         <div class="nav-link-wrapper">
-                            <a href="logout.php">Log Out</a>
+                            <a href="scripts/logout.php">Log Out</a>
                         </div>
                     </div>
 
@@ -68,8 +68,8 @@ if (!isset($_SESSION['user'])) {
                         </button>
                         <div class="dropdown">
                         <div class="nav-link-wrapper"><a class="" href="analytics.php">Analytics</a></div>
-                         <div class="nav-link-wrapper"><a class="" href="about-in.php">About</a></div>
-                         <div class="nav-link-wrapper"><a class="" href="contact-in.php">Contact</a></div>
+                         <div class="nav-link-wrapper"><a class="" href="about.php">About</a></div>
+                         <div class="nav-link-wrapper"><a class="" href="contact.php">Contact</a></div>
                          <div class="nav-link-wrapper"><a class="" href="profile.php">Profile</a></div>
   
                         </div>

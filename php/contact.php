@@ -15,24 +15,23 @@
     <?php 
         include "header.php";
 
-        if (isset($_SESSION['user'])) {
-            header('Location: contact-in.php');
-        }
 
     ?>
+
+
    
     <h1>Contact</h1>
 
     If you have a problem with your log-in or account, require assistance with using the 
     website or apps, or have any other questions/suggestions/comments that are not answered
-    by the <a href="../consent-about-out.html">consent form</a>, please do not hesitate to 
+    by the <a href="../consent.php">consent form</a>, please do not hesitate to 
     contact the site administrator at: 
     <a href = "mailto: cif.database@gmail.com">cif.database@gmail.com</a>
     <br><br>
     Feedback is always welcome!
-
+    <br><br>
     <!-- <div class="contact form">
-        <form id="contact-form" method="post" action="">
+        <form id="contact-form" method="post" action="scripts/emailHandler.php">
         <input name="name" type="text" class="form-control" placeholder="Your Name" required>
         <br>
         <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" required> 
@@ -47,7 +46,7 @@
         <br>
         <textarea name="message" class="form-control" placeholder="Your message here" row="10" cols="40"></textarea>
         <br>
-        <input type="submit" class="form-control" value="SEND MESSAGE">
+        <input type="submit" class="form-control" name="submit" value="SEND MESSAGE">
         <hr>
         </form>
     </div> -->

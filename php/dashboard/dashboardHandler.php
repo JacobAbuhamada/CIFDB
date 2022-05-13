@@ -1,8 +1,8 @@
 <?php
     // include_once 'header.php';
 
-    require_once 'class-db.php';
-    require_once 'conn.php';
+    require_once 'scripts/class-db.php';
+    require_once 'scripts/conn.php';
 
      
     $conn = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
@@ -10,39 +10,53 @@
         die("Failed to connect with MySQL: " . $conn->connect_error);
     }
 
+    $operationHuman = array("AVG" => "Average", "STDDEV" => "Standard Deviation", "MIN" => "Minimum", "MAX" => "Maximum");
+    $fieldHuman = array("X" => "Functioning", "Y" => "Intensity", "Z" => "Valence", "SoS" => "Sense of Self");
 
+    function getStats($conn){
 
-    $averageFunctioningResult = $conn->query("SELECT AVG(X) AS AverageFunctioning FROM vectors");
-    $averageIntenstiyResult = $conn->query("SELECT AVG(Y) AS AverageIntensity FROM vectors");
-    $averageValenceResult = $conn->query("SELECT AVG(Z) AS AverageValence FROM vectors");
-    $averageSoSResult = $conn->query("SELECT AVG(SoS) AS AverageSoS FROM vectors");
+        $stats = array();
+        
+        if(isset($_SESSION["user"])){
+            $stats["user"] = array();
+        }
+        $stats["everyone"] = array();
 
-    $averageEveryoneFunctioning = $averageFunctioningResult -> fetch_assoc()["AverageFunctioning"] + 5;
-    $averageEveryoneIntenstiy = $averageIntenstiyResult -> fetch_assoc()["AverageIntensity"];
-    $averageEveryoneValence = $averageValenceResult -> fetch_assoc()["AverageValence"];
-    $averageEveryoneSoS = $averageSoSResult -> fetch_assoc()["AverageSoS"];
+        $operations = ["AVG", "STDDEV", "MIN", "MAX"];
+        $fields = ["X", "Y", "Z", "SoS"];
+        foreach($operations as $operation ){
+            foreach($fields as $field ){
+                $value;
+                $userValue;
+                
+                if(isset($_SESSION["user"])){
+                    $userValue = $conn->query("SELECT ".$operation."(".$field.") AS value FROM vectors WHERE ID = {$_SESSION['user']["ID"]}")->fetch_assoc()["value"];
+                }
+                $value = $conn->query("SELECT ".$operation."(".$field.") AS value FROM vectors") -> fetch_assoc()["value"];
+                
+                if($operation.$field == "AVGX"){ // incrementing by 5 for the function
+                    $value += 5;
+                    if(isset($_SESSION["user"])){
+                        $userValue += 5;
+                    }
+                }
 
-    $stats = array("averageFunctioning" => array( "everyone" => $averageEveryoneFunctioning),
-    "averageIntenstiy" => array( "everyone" => $averageEveryoneIntenstiy),
-    "averageValence" => array( "everyone" => $averageEveryoneValence),
-    "averageSoS" => array( "everyone" => $averageEveryoneSoS));
-
-    if(isset($_SESSION["user"])){
-        $averageFunctioningResult = $conn->query("SELECT AVG(X) AS AverageFunctioning FROM vectors WHERE ID = {$_SESSION['user']["ID"]}");
-        $averageIntenstiyResult = $conn->query("SELECT AVG(Y) AS AverageIntensity FROM vectors WHERE ID = {$_SESSION['user']["ID"]}");
-        $averageValenceResult = $conn->query("SELECT AVG(Z) AS AverageValence FROM vectors WHERE ID = {$_SESSION['user']["ID"]}");
-        $averageSoSResult = $conn->query("SELECT AVG(SoS) AS AverageSoS FROM vectors WHERE ID = {$_SESSION['user']["ID"]}");
-    
-        $averageFunctioning = $averageFunctioningResult -> fetch_assoc()["AverageFunctioning"] + 5;
-        $averageIntenstiy = $averageIntenstiyResult -> fetch_assoc()["AverageIntensity"];
-        $averageValence = $averageValenceResult -> fetch_assoc()["AverageValence"];
-        $averageSoS = $averageSoSResult -> fetch_assoc()["AverageSoS"];
-
-        $stats["averageFunctioning"]["user"] = $averageFunctioning;
-        $stats["averageIntenstiy"]["user"] = $averageIntenstiy;
-        $stats["averageValence"]["user"] = $averageValence;
-        $stats["averageSoS"]["user"] = $averageSoS;
+                if(isset($_SESSION["user"])){
+                    if(!isset($stats["user"][$field])){
+                        $stats["user"][$field] = array();
+                    }
+                    $stats["user"][$field][$operation] = $userValue;
+                }
+                if(!isset($stats["everyone"][$field])){
+                    $stats["everyone"][$field] = array();
+                }
+                $stats["everyone"][$field][$operation] = $value;
+            }
+        }
+        return $stats;
     }
+
+    $stats = getStats($conn);
 
     // Count total experiences
 

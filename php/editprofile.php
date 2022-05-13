@@ -12,7 +12,7 @@
 <body>
 
 <?php
-    include "class-db.php";
+    include "scripts/class-db.php";
 
     session_start();
     
@@ -308,7 +308,7 @@ ability to sort experiences by different categories the nuanced differences betw
     <br><br> -->
     
     <hr>
-    <form action="profile-handler.php" method="POST">
+    <form action="scripts/profile-handler.php" method="POST">
     <div>
         <label for="birthdate"><strong>Birthdate:</strong></label>
         <input type="date" name="birthdate" id="birthdate" min="1900-01-01" max="2012-01-01" value="<?php echo isset($data['DOB']) ? $data['DOB'] : ""; ?>" required>

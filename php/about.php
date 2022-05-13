@@ -7,27 +7,21 @@
       <meta name="keywords" content="CIF, CIFDB, Common, Integrative, Framework">
       <meta name="color-scheme" content="light only">
       <title>CIFDB | About</title>  
-      <link rel="stylesheet" href="../css/style.css">
-
+      <link rel="stylesheet" href="../css/style.css" >
     </head>
 <body>
 
-    <?php 
-        include "header.php";
+<?php 
+include "header.php";
 
-        if (isset($_SESSION['user'])) {
-            header('Location: about-in.php');
-        }
-
-    ?>
-
+?>
 
     <h1>About the CIF Database</h1>
 
-    <br><br>
-    <form action="../consent-about-out.html">
-        <input type="submit" value="View Study Consent Form" />
-    </form>
+    <br>
+        <a href="../consent.php?redirect=about" >
+            <button>View Study Consent Form</button>
+        </a>
 
     <div class="about">
         
@@ -39,8 +33,13 @@
         a professional to explore/deconstruct your psychology. The collective data from all participants will
         also support research in psychology, psychiatry, sociology, religion, phenomenology/philosophy of mind, 
         and any other fields related to the mind or consciousness.
-        <br><br>
-        
+        <br>
+        <br>
+    <?php include("components/_video_iframe.php"); ?>
+<br>
+        <hr>
+
+    <br>
         <img src="../images/CIF_Map_3_title_name_year.jpg">
         
     </div>

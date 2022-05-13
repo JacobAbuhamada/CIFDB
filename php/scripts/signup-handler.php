@@ -32,23 +32,23 @@ if (isset($_POST['submit'])) {
                 // exit();
             }
             else{
-                header("Location: signup.php?error=unknown");
+                header("Location: ../signup.php?error=unknown");
                 exit();
             }
             
-            header("Location: editprofile.php?submit=success");
+            header("Location: ../editprofile.php?submit=success");
             
         } else {
             $arr_message = array('class' => 'error', 'message' => 'Email already exists.'); // is not going to be used at all.
-            header("Location: signup.php?error=emailExists");
+            header("Location: ../signup.php?error=emailExists");
         }
     }
     else{
         if($_POST['email'] !== $_POST['confirmemail']){
-            header("Location: signup.php?error=emailNotMatch");
+            header("Location: ../signup.php?error=emailNotMatch");
         }
         else{
-            header("Location: signup.php?error=passwordNotMatch");
+            header("Location: ../signup.php?error=passwordNotMatch");
         }
     }
 

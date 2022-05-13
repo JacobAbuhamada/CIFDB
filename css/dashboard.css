@@ -43,10 +43,71 @@ td, th{
 }
 
 .word_count_content th, .word_count_content td{
-  padding: 0.25rem 2.75rem;
+  padding: 0.25rem 1.25rem;
 }
-.word_count_content{
+/* .row {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+*/
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  margin-bottom: 1.5rem;
+}
+
+.word_count_content, .totalStats{
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
+  flex-direction: row;
+}
+.table-wrap-ver{
+    display: flex;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      flex-direction: column;
+}
+
+.table-wrap-ver td, .table-wrap-ver th{
+  padding: 0.5rem;
+}
+
+.totalStats p{
+  padding: 0px!important;
+}
+
+.statistics-text{
+  text-align: left;
+}
+
+@media only screen and (max-width: 720px) {
+  .column {
+    float: none;
+    width: 100%;
+    padding: 5px;
+  }
+
+    .word_count_content {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      flex-direction: column;
+    }
 }
