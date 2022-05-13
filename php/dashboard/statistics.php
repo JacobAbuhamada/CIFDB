@@ -18,7 +18,7 @@
                             echo "<th>Your Average</th>";
                         }
                     ?>
-                    <th>Everyone Else</th>
+                    <th>Everyone</th>
                 </tr>
                 <?php
                     foreach($stats as $key => $value){

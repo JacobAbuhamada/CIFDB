@@ -17,8 +17,8 @@
     $averageValenceResult = $conn->query("SELECT AVG(Z) AS AverageValence FROM vectors");
     $averageSoSResult = $conn->query("SELECT AVG(SoS) AS AverageSoS FROM vectors");
 
-    $averageEveryoneFunctioning = number_format($averageFunctioningResult -> fetch_assoc()["AverageFunctioning"]) + 5;
-    $averageEveryoneIntenstiy = number_format($averageIntenstiyResult -> fetch_assoc()["AverageIntensity"]) + 5;
+    $averageEveryoneFunctioning = $averageFunctioningResult -> fetch_assoc()["AverageFunctioning"] + 5;
+    $averageEveryoneIntenstiy = $averageIntenstiyResult -> fetch_assoc()["AverageIntensity"];
     $averageEveryoneValence = $averageValenceResult -> fetch_assoc()["AverageValence"];
     $averageEveryoneSoS = $averageSoSResult -> fetch_assoc()["AverageSoS"];
 
@@ -33,8 +33,8 @@
         $averageValenceResult = $conn->query("SELECT AVG(Z) AS AverageValence FROM vectors WHERE ID = {$_SESSION['user']["ID"]}");
         $averageSoSResult = $conn->query("SELECT AVG(SoS) AS AverageSoS FROM vectors WHERE ID = {$_SESSION['user']["ID"]}");
     
-        $averageFunctioning = number_format($averageFunctioningResult -> fetch_assoc()["AverageFunctioning"]) + 5;
-        $averageIntenstiy = number_format($averageIntenstiyResult -> fetch_assoc()["AverageIntensity"]) + 5;
+        $averageFunctioning = $averageFunctioningResult -> fetch_assoc()["AverageFunctioning"] + 5;
+        $averageIntenstiy = $averageIntenstiyResult -> fetch_assoc()["AverageIntensity"];
         $averageValence = $averageValenceResult -> fetch_assoc()["AverageValence"];
         $averageSoS = $averageSoSResult -> fetch_assoc()["AverageSoS"];
 
@@ -46,8 +46,8 @@
 
     // Count total experiences
 
-    $avgNumExperience =  count($conn->query("SELECT * FROM vectors")->fetch_assoc()) / count($conn->query("SELECT * FROM user")->fetch_assoc());
-    $totalNumExperiences =  count($conn->query("SELECT * FROM vectors WHERE ID = {$_SESSION["user"]["ID"]}")->fetch_assoc());
+    $avgNumExperience =  count($conn->query("SELECT * FROM vectors")->fetch_all()) / count($conn->query("SELECT * FROM user")->fetch_all());
+    $totalNumExperiences =  count($conn->query("SELECT * FROM vectors WHERE ID = {$_SESSION["user"]["ID"]}")->fetch_all());
 
 
 ?>

@@ -15,7 +15,7 @@
 
 <?php 
         include "header.php";
-        include "dashboardHandler.php";
+        include "dashboard/dashboardHandler.php";
 
         if (!isset($_SESSION['user'])) {
             header('Location: login.php');
