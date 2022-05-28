@@ -15,7 +15,6 @@
 include "header.php";
 
 ?>
-
     <h1>About the CIF Database</h1>
 
     <br>

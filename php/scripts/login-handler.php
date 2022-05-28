@@ -14,9 +14,6 @@ if (isset($_POST['submit'])) {
     // echo $_POST['email'] . $_POST['password'];
     $db = new DB();
     $response = $db->check_credentials($_POST['email'], $_POST['password']);
-    
-    // echo var_dump($response);
-    // exit();
 
     if ($response) {
         if($response["status"] != "error"){

@@ -79,9 +79,7 @@
 
       <br>
       <div class="input-box button">
-        <!-- <a href="editprofile.html">
-          <input type="submit" name="submit" value="Register">
-        </a>     -->
+        
         <button type="reset">Reset</button>
 
           <button type="submit" name="submit">Submit</button>

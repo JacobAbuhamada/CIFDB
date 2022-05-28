@@ -26,8 +26,6 @@
         <br>
         <h1>Log In</h1>
         <form action="scripts/login-handler.php" method="POST">
-            <!-- Username:  <input type="text" name="username"><br><br>
-            Password:  <input type="text" name="password"><br> -->
             <?php if(isset($_GET["error"]) && $_GET["error"] == "invalid") 
                echo "<p><strong>Your Email or Password is incorrect.</strong></p>";
             ?>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- editprofile page is linked from signup or edit profile -->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -304,8 +304,6 @@
 experience of different demographic groups and look for relationships between identity and experience. Without the
 ability to sort experiences by different categories the nuanced differences between groups will be lost in the aggregation.
     <br><br>
-    <!-- <strong>Responses are optional except for Date of Birth, which will be encrypted.</strong>
-    <br><br> -->
     
     <hr>
     <form action="scripts/profile-handler.php" method="POST">
@@ -854,7 +852,6 @@ ability to sort experiences by different categories the nuanced differences betw
             <label for="dementia">Dementia (Alzheimer's, Parkinson's, Huntington's, etc.)</label>
             <br><br>
             <label for="additional_diag">Please write all specific confirmed diagnoses (including any not listed above):</label>
-            <!-- <input type="text" name="known_diag" id="additional_diag" placeholder=" "> -->
             <br>
             <textarea id="additional_diag" name="additional_diag" rows="3" cols="40" maxlength="1000"><?php echo isset($data["known_diagnoses"]) ? $data["known_diagnoses"] : '' ?></textarea>
             <br>
@@ -911,7 +908,6 @@ ability to sort experiences by different categories the nuanced differences betw
             <label for="dementia">Dementia (Alzheimer's, Parkinson's, Huntington's, etc.)</label>
             <br><br>
             <label for="add_susp_diag">Please write all suspected diagnoses (including any not listed above):</label>
-            <!-- <input type="text" name="known_diag" id="additional_diag" placeholder=" "> -->
             <br>
             <textarea name="susp_diag" id="add_susp_diag"  rows="3" cols="40"  maxlength="1000"><?php echo isset($data["susp_diagnoses"]) ? $data["susp_diagnoses"] : '' ?></textarea>
             <br>

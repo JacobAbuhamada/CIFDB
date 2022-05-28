@@ -18,8 +18,6 @@
 
     ?>
 
-
-   
     <h1>Contact</h1>
 
     If you have a problem with your log-in or account, require assistance with using the 
@@ -30,26 +28,7 @@
     <br><br>
     Feedback is always welcome!
     <br><br>
-    <!-- <div class="contact form">
-        <form id="contact-form" method="post" action="scripts/emailHandler.php">
-        <input name="name" type="text" class="form-control" placeholder="Your Name" required>
-        <br>
-        <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" required> 
-        <br>
-        <select name="msg_type" id="msg_type">
-            <option value="" disabled selected>Correspondence Type: </option>
-            <option value="login_prob">Login Problem (forgot email/password)</option>
-            <option value="comment">Suggestion/Comment/s</option>
-            <option value="help">Question/Help with using Site</option>
-            <option value="other">Other</option>
-        </select>
-        <br>
-        <textarea name="message" class="form-control" placeholder="Your message here" row="10" cols="40"></textarea>
-        <br>
-        <input type="submit" class="form-control" name="submit" value="SEND MESSAGE">
-        <hr>
-        </form>
-    </div> -->
+
 </body>
 
 </html>

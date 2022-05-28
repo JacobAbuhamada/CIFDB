@@ -206,21 +206,6 @@ if (isset($_POST['submit'])) {
         $result = $stmt->execute();
     }
     
-
-    // $db = new DB();
-    //    $sql = "INSERT INTO `profile` (`ID`,`DOB`, `gender`, `trans`, `race`,`ethnicity`, `religion`,
-//     `econ_stance`, `cultural_stance`, `education`, `country`, `zip`, `soc_class`, `vet_status`, 
-//     `dis_status`, `maj_depression`, `min_depression`, `GAD`, `PTSD`, `social_anx`, `OCD`, `DID`, 
-//     `dissociative`, `bipolar`, `psychotic`, `personality`, `sleep`, `eating`, `dementia`, `known_diagnoses`, 
-//     `susp_diagnoses`, `medications`) 
-//     VALUES ({$_SESSION['user']['ID']},'{$birthdate}', '{$gender}', '{$trans}', '{$race}', 
-//     '{$ethnicity}', '{$religion}', '{$economics}', '{$culture}', '{$education}', 
-//     '{$country}', '{$zip}', '{$soc_class}', '{$vet_status}', '{$dis_status}', '{$maj_depression}', 
-//     '{$min_depression}', '{$GAD}', '{$PTSD}', '{$social_anx}', '{$OCD}', 
-//     '{$DID}', '{$dissociative}', '{$bipolar}', '{$psychotic}', '{$personality}', 
-//     '{$sleep}', '{$eating}', '{$dementia}', '{$additional_diag}', '{$susp_diag}', '{$Rx}')";
-
-    // $result = $conn->store_profile_results($sql);
     echo $conn->error;
     if ($result){
         header('Location: ../profile.php?profile=success');

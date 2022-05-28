@@ -24,12 +24,9 @@ if (isset($_POST['submit'])) {
                 )
             );
 
-            // die(var_dump($response));
 
             if($response){
                 $_SESSION['user'] = array("ID" => $response["ID"], "email" => $_POST['email'], "password" => $response["password"], "join_date" => $response["password"]);
-                // echo var_dump($_SESSION['user']);
-                // exit();
             }
             else{
                 header("Location: ../signup.php?error=unknown");

@@ -38,13 +38,6 @@ if (isset($_POST['submit'])) {
     );
     $result = $stmt->execute();
     
-    // $db = new DB;
-    // $sql = "INSERT INTO `vectors` (`ID`,`v_time`,`v_date`,`X`,`Y`,`Z`,`SoS`,`description`,`past_or_pres`) 
-    // VALUES ({$_SESSION['user']['ID']},'{$v_time}', '{$v_date}', '{$X}', '{$Y}', 
-    // '{$Z}', '{$SoS}', '{$description}', '{$isPresentExperience}')";
-
-
-    // $result = $db->store_vector_results($sql, $_POST['time'],$_POST['date']);
     echo $conn->error;
     if ($result){
         header('Location: ../profile.php?experience=success');

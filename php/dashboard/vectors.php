@@ -19,17 +19,9 @@
                       $count++;
                       echo "<tr><td>{$count}</td>";
                       foreach($experience as $key => $value){
-                        // if($key == "past_or_pres"){
-                        //   if($value == 1){
-                        //     echo "<td>Present</td>";    
-                        //   }
-                        //   else{
-                        //     echo "<td>Past</td>";    
-                        //   }
-                        // }
-                        // else{
+            
                           echo "<td>{$value}</td>";
-                        // }
+                    
                       }
                       echo "</tr>";
                     }

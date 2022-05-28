@@ -91,16 +91,6 @@ class DB extends mysqli {
 
 
 public function insert_user($arr_data = array()) {
-    // $keys = array_keys($arr_data);
-    // $values = array_values($arr_data);
-    // $db_values = '';
-    // $i = 0;
-    // foreach($values as $v) {
-    //     $pre = ($i > 0)?', ':'';
-    //     $db_values .= $pre. "'". $this->db->real_escape_string($v)."'";
-    //     $i++;
-    // }
-
     
     $stmt = $this->db->prepare("INSERT INTO user (email, password, join_date) VALUES (?, ?, ?)");
     $stmt->bind_param('sss', $arr_data['email'], $arr_data['password'], $arr_data['join_date']);

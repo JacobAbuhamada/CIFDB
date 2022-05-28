@@ -1,7 +1,5 @@
 <!-- Vector List (pull from vectors table/filter by user) -->
 
-
-
     <!-- summary statistics -->
 
     <h2>Summary Statistics</h2>

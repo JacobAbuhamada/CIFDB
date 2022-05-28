@@ -142,7 +142,6 @@ if (!isset($_SESSION['user'])) {
 
     </section>
     <hr>
-    <!-- This section will include a button to the App and information about the Stroop test and its importance-->
     <section class="stroop">
       <strong>Stroop (Optional)</strong>
       <br><br>
