@@ -5,6 +5,9 @@
     // $dbPassword = "";
     // $dbName     = "cifdb";
 
-
+    $dbHost     = "pluto.hood.edu";
+    $dbUsername = "jia2";
+    $dbPassword = "password";
+    $dbName     = "cifdb";
     
 ?>
